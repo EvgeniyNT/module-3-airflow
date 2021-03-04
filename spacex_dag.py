@@ -16,7 +16,7 @@ default_args = {
 
 dag = DAG("spacex", default_args=default_args, schedule_interval="0 0 1 1 *")
 
-print(params.rocket, {{params.rocket}})
+print({{params.rocket}})
 
 # for i in params.rocket:
 #     t1 = BashOperator(
