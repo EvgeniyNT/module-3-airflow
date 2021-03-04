@@ -20,7 +20,8 @@ for i in ["all", "falcon1", "falcon9", "falconheavy"]:
     t1 = BashOperator(
         task_id="get_data", 
         bash_command="python3 /root/airflow/dags/spacex/load_launches.py -y {{{{ execution_date.year }}}} -o /var/data {}".format("-r {{ params.rocket }}" if i !="all" else ""), 
-        params={"rocket": i}
+        params={"rocket": i},
+        dag=dag
     )
 
     t2 = BashOperator(
