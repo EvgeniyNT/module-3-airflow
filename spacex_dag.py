@@ -31,5 +31,5 @@ for i in ["all", "falcon1", "falcon9", "falconheavy"]:
         dag=dag
     )
 
-t1 >> t2
+    t1 >> t2
 
