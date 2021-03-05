@@ -22,7 +22,6 @@ def parse_launch_record(r: dict):
 def load_json(launch_year: int, rocket: str):
     url = 'https://api.spacexdata.com/v3/launches/past'
     payload = {'launch_year': launch_year}
-    print("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!", rocket)
     if rocket != '':
         payload['rocket_id'] = rocket
     headers = {}
@@ -62,13 +61,6 @@ if __name__ == "__main__":
     print(args)
 
     data = load_json(args.launch_year, args.rocket)
-    print()
-    print()
-    print()
-    print(data)
-    print()
-    print()
-    print()
     write_csv(data, args.output_dir, args.launch_year, args.rocket)
 
 
